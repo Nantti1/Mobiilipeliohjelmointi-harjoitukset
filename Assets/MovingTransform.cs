@@ -13,7 +13,7 @@ namespace Harjoitukset
         [SerializeField] private float maxXAkseli = 4;
         private Transform transforming;
 
-        private Vector2 direction = new Vector2(1,0);
+        private Vector2 direction = new Vector2(0,0);
         
 
 
@@ -28,17 +28,20 @@ namespace Harjoitukset
         // Update is called once per frame
         void Update()
         {
-            Vector2 movement = direction * 1 * Time.deltaTime;
+            Vector2 movement = direction * 2 * Time.deltaTime;
 
+            
+
+            float xposition = transforming.position.x;
             transforming.Translate(movement);
 
             Debug.Log(transforming.position.x);
-            if (transforming.position.x <= maxXAkseli)
-            {
-                direction.x = 1;
-            } else if (transforming.position.x >= minXAkseli)
+            if (xposition > maxXAkseli)
             {
                 direction.x = -1;
+            } else if (xposition < minXAkseli)
+            {
+                direction.x = 1;
             }
             
             
