@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 2884510596784977015}
   - component: {fileID: 2884510596784977014}
   - component: {fileID: 2884510596784977008}
-  - component: {fileID: 6633595282179625958}
-  - component: {fileID: -2052268043319392947}
-  - component: {fileID: 7536494560662344465}
-  - component: {fileID: -2845829201703819715}
+  - component: {fileID: 2884510596784976974}
+  - component: {fileID: 2884510596784976969}
+  - component: {fileID: 2884510596784976968}
+  - component: {fileID: 2884510596784976971}
   m_Layer: 0
   m_Name: Liikkuva ukko
   m_TagString: Untagged
@@ -170,35 +170,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &6633595282179625958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2884510596784977011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f245aeaaa67b1eb4c827f84738a797e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  thrust: 15
---- !u!114 &-2052268043319392947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2884510596784977011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f44722c03bb744439415d77cdf63314, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &7536494560662344465
+  m_Constraints: 0
+--- !u!114 &2884510596784976974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,7 +183,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5992c8e195c480449b36625dfe210a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2845829201703819715
+--- !u!114 &2884510596784976969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884510596784977011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f44722c03bb744439415d77cdf63314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &2884510596784976968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884510596784977011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5992c8e195c480449b36625dfe210a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2884510596784976971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,29 +235,29 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7536494560662344465}
-        m_TargetAssemblyTypeName: Harjoitukset.InputReader, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
+      - m_Target: {fileID: 11500000, guid: 5992c8e195c480449b36625dfe210a25, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 6abb7b16-92e2-4e43-ab38-75b562f88f5a
-    m_ActionName: Controls/OnMove[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionName: Controls/Move1[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7536494560662344465}
-        m_TargetAssemblyTypeName: Harjoitukset.InputReader, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
+      - m_Target: {fileID: 11500000, guid: 5992c8e195c480449b36625dfe210a25, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -268,7 +266,7 @@ MonoBehaviour:
     m_ActionId: 83238ec0-268a-427c-8221-ef74a23a361c
     m_ActionName: Controls/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: controls
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
