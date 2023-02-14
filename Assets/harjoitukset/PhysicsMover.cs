@@ -12,6 +12,7 @@ namespace Harjoitukset
         private Vector2 direction;
         private Rigidbody2D rb2D;
         private InputReader inputReader;
+        public bool grounded = false;
         
         [SerializeField] 
         private float thrust = 2;
@@ -24,6 +25,19 @@ namespace Harjoitukset
                 Debug.LogError($"{gameObject} is missing a component Rigidbody2D which it is dependant on!");
             }
         }
+
+        
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            grounded = true; 
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            grounded = false;
+        }
+
+
 
         private void FixedUpdate()
         {
@@ -42,24 +56,13 @@ namespace Harjoitukset
                 jump = true;
             }
 
-            RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Did not Hit");
-            }
+            
 
 
             Vector2 direction = inputReader.GetMoveInput();
             Vector2 movement = direction * speed * Time.fixedDeltaTime;
             transform.Translate(movement);
-            if (jump)
+            if (jump && grounded)
             {
                 rb2D.AddForce(transform.up * thrust,ForceMode2D.Impulse);
                 
