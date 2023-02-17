@@ -32,6 +32,10 @@ namespace Harjoitukset
             //Debug.Log("Jump");
         }
 
+
+       
+
+
         public Vector2 GetMoveInput()
         {
             return moveInput;

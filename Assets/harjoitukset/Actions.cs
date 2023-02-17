@@ -92,6 +92,34 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Launch"",
+            ""id"": ""fec819ef-0731-4f13-84d1-6dbe3b3c9b58"",
+            ""actions"": [
+                {
+                    ""name"": ""Launch"",
+                    ""type"": ""Button"",
+                    ""id"": ""08c6c824-72f2-4c04-9b2d-e5d1a1580e28"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""31f6aa38-d8ba-4009-82de-6dde68f96ac5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""controls"",
+                    ""action"": ""Launch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -112,6 +140,9 @@ public partial class @Actions : IInputActionCollection2, IDisposable
         m_Controls = asset.FindActionMap("Controls", throwIfNotFound: true);
         m_Controls_OnMove = m_Controls.FindAction("OnMove", throwIfNotFound: true);
         m_Controls_Jump = m_Controls.FindAction("Jump", throwIfNotFound: true);
+        // Launch
+        m_Launch = asset.FindActionMap("Launch", throwIfNotFound: true);
+        m_Launch_Launch = m_Launch.FindAction("Launch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -208,6 +239,39 @@ public partial class @Actions : IInputActionCollection2, IDisposable
         }
     }
     public ControlsActions @Controls => new ControlsActions(this);
+
+    // Launch
+    private readonly InputActionMap m_Launch;
+    private ILaunchActions m_LaunchActionsCallbackInterface;
+    private readonly InputAction m_Launch_Launch;
+    public struct LaunchActions
+    {
+        private @Actions m_Wrapper;
+        public LaunchActions(@Actions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Launch => m_Wrapper.m_Launch_Launch;
+        public InputActionMap Get() { return m_Wrapper.m_Launch; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LaunchActions set) { return set.Get(); }
+        public void SetCallbacks(ILaunchActions instance)
+        {
+            if (m_Wrapper.m_LaunchActionsCallbackInterface != null)
+            {
+                @Launch.started -= m_Wrapper.m_LaunchActionsCallbackInterface.OnLaunch;
+                @Launch.performed -= m_Wrapper.m_LaunchActionsCallbackInterface.OnLaunch;
+                @Launch.canceled -= m_Wrapper.m_LaunchActionsCallbackInterface.OnLaunch;
+            }
+            m_Wrapper.m_LaunchActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Launch.started += instance.OnLaunch;
+                @Launch.performed += instance.OnLaunch;
+                @Launch.canceled += instance.OnLaunch;
+            }
+        }
+    }
+    public LaunchActions @Launch => new LaunchActions(this);
     private int m_controlsSchemeIndex = -1;
     public InputControlScheme controlsScheme
     {
@@ -221,5 +285,9 @@ public partial class @Actions : IInputActionCollection2, IDisposable
     {
         void OnOnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+    }
+    public interface ILaunchActions
+    {
+        void OnLaunch(InputAction.CallbackContext context);
     }
 }

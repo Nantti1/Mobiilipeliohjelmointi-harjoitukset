@@ -70,6 +70,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Launch",
+            "id": "fec819ef-0731-4f13-84d1-6dbe3b3c9b58",
+            "actions": [
+                {
+                    "name": "Launch",
+                    "type": "Button",
+                    "id": "08c6c824-72f2-4c04-9b2d-e5d1a1580e28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "31f6aa38-d8ba-4009-82de-6dde68f96ac5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "controls",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

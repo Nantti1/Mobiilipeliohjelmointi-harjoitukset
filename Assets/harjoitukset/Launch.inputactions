@@ -1,0 +1,46 @@
+{
+    "name": "Launch",
+    "maps": [
+        {
+            "name": "PresstoLaunch",
+            "id": "ea7d55d7-6670-4c10-847c-a74da59dd7a8",
+            "actions": [
+                {
+                    "name": "Launch",
+                    "type": "Button",
+                    "id": "e85dd80f-5d87-4bdf-af74-e2a87156d271",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5cc24808-d53f-44df-adcd-1e80499ed531",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Launching",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Launching",
+            "bindingGroup": "Launching",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
