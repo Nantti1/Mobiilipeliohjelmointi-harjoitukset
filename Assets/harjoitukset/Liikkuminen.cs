@@ -11,7 +11,7 @@ namespace Harjoitukset
         //[SerializeField] private float maxYPiste = 0;
         //[SerializeField] private float yPiste = -2;
         private Rigidbody2D rigid;
-        private float speed = 5f;
+        //private float speed = 5f;
       
 
         //private Vector3 direction = new(0, 0, 0);

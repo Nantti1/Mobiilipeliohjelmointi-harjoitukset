@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2884510596784977013}
   - component: {fileID: 2884510596784977012}
   - component: {fileID: 7534575522294296538}
+  - component: {fileID: 233730721186474619}
   - component: {fileID: 2884510596784977015}
   - component: {fileID: 2884510596784977014}
   - component: {fileID: 2884510596784977008}
@@ -117,7 +118,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae6cf347d1b6a843b2da6725bf78b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  thrust: 1
+--- !u!114 &233730721186474619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884510596784977011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd8ff27c996a2f46be83849cf95e95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &2884510596784977015
 Animator:
   serializedVersion: 5
