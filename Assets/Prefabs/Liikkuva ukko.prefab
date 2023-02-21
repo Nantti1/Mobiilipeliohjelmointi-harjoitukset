@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2884510596784976970}
   - component: {fileID: 2884510596784977013}
   - component: {fileID: 2884510596784977012}
+  - component: {fileID: 7534575522294296538}
   - component: {fileID: 2884510596784977015}
   - component: {fileID: 2884510596784977014}
   - component: {fileID: 2884510596784977008}
@@ -104,6 +105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147d22e371afd6b48a9edefe4c31ca80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7534575522294296538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884510596784977011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae6cf347d1b6a843b2da6725bf78b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!95 &2884510596784977015
 Animator:
   serializedVersion: 5
@@ -184,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  grounded: 0
   thrust: 15
 --- !u!114 &-2052268043319392947
 MonoBehaviour:
@@ -267,6 +282,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 83238ec0-268a-427c-8221-ef74a23a361c
     m_ActionName: Controls/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 08c6c824-72f2-4c04-9b2d-e5d1a1580e28
+    m_ActionName: Launch/Launch[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: controls
   m_DefaultActionMap: Controls

@@ -25,7 +25,6 @@ namespace Harjoitukset
             }
         }
 
-        
         private void OnCollisionEnter2D(Collision2D collision)
         {
             grounded = true; 
@@ -35,7 +34,6 @@ namespace Harjoitukset
         {
             grounded = false;
         }
-
 
 
         private void FixedUpdate()
@@ -49,8 +47,6 @@ namespace Harjoitukset
             {
                 jump = true;
             }
-
-            
 
 
             Vector2 direction = inputReader.GetMoveInput();

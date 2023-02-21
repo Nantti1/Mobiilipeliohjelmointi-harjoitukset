@@ -8,8 +8,6 @@ namespace Harjoitukset
 {
     public class T2inputReader : MonoBehaviour
     {
-        private float baseForce = 0.5f;
-        private float forceMultiplier = 1.5f;
         private float maxForce = 9f;
         private float chargeTime = 1f;
 

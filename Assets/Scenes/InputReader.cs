@@ -33,9 +33,6 @@ namespace Harjoitukset
         }
 
 
-       
-
-
         public Vector2 GetMoveInput()
         {
             return moveInput;
