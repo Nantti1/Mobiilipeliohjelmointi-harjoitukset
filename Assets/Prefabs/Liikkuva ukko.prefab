@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e22cac31648df3429332a32ec60a062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 20
 --- !u!95 &2884510596784977015
 Animator:
   serializedVersion: 5
@@ -226,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   grounded: 0
-  thrust: 15
+  thrust: 13
 --- !u!114 &-2052268043319392947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,11 +315,39 @@ MonoBehaviour:
     m_ActionId: 08c6c824-72f2-4c04-9b2d-e5d1a1580e28
     m_ActionName: Launch/Launch[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6643356511984648854}
+        m_TargetAssemblyTypeName: Harjoitukset.H6T1, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 975bce87-b055-4207-994c-69820eee3878
     m_ActionName: GameTouch/TapMove[/Device Simulator Touchscreen/primaryTouch/position]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: controls
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7536494560662344465}
+        m_TargetAssemblyTypeName: Harjoitukset.InputReader, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5b086e97-35ee-4f99-a36f-0356e282280a
+    m_ActionName: GameTouch/Jump
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

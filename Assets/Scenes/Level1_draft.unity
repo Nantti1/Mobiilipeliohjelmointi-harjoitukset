@@ -1356,104 +1356,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: m_DefaultActionMap
       value: Controls
       objectReference: {fileID: 0}
     - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Gamepad
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 5
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
-      value: 08c6c824-72f2-4c04-9b2d-e5d1a1580e28
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
-      value: 975bce87-b055-4207-994c-69820eee3878
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
-      value: 5b086e97-35ee-4f99-a36f-0356e282280a
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
-      value: Launch/Launch[/Keyboard/e]
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
-      value: GameTouch/TapMove[/Device Simulator Touchscreen/primaryTouch/position]
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
-      value: GameTouch/Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1350383179}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 2090703630}
     - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnMove
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnJump
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Harjoitukset.H6T1, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Harjoitukset.InputReader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: -2845829201703819715, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2884510596784976970, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: m_RootOrder
@@ -1515,20 +1435,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6633595282179625958, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: thrust
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6633595282179625958, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: grounded
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6633595282179625958, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6643356511984648854, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
       propertyPath: thrust
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643356511984648854, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7534575522294296538, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
@@ -1541,17 +1453,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
---- !u!114 &1350383179 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6643356511984648854, guid: b1cca48e7cba31d40b756d5e2fd68d15, type: 3}
-  m_PrefabInstance: {fileID: 1350383178}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e22cac31648df3429332a32ec60a062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1390698631 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7482048881021314291, guid: 225e6059507a76a40ac1695899ecb2c2, type: 3}
@@ -3059,7 +2960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7482048881021314300, guid: 225e6059507a76a40ac1695899ecb2c2, type: 3}
       propertyPath: m_ControlPath
-      value: <Gamepad>/leftStick/up
+      value: <Keyboard>/space
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 225e6059507a76a40ac1695899ecb2c2, type: 3}
