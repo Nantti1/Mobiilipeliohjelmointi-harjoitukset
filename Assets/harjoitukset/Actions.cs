@@ -82,6 +82,28 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""651450f3-4f51-41f9-a913-9cddf979c76f"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""OnMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2625e2e3-77c3-4ae6-b328-8e4563c0d2bf"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""OnMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""723e41e9-d260-4dc7-b7dc-b743b6c6c96b"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -120,6 +142,34 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GameTouch"",
+            ""id"": ""43bcc714-8c8f-419e-9982-321272118e16"",
+            ""actions"": [
+                {
+                    ""name"": ""TapMove"",
+                    ""type"": ""Value"",
+                    ""id"": ""975bce87-b055-4207-994c-69820eee3878"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d6871d7e-d9b8-458f-94ca-692d6f7feaec"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touchscreen"",
+                    ""action"": ""TapMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -129,6 +179,28 @@ public partial class @Actions : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Touchscreen"",
+            ""bindingGroup"": ""Touchscreen"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Touchscreen>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -143,6 +215,9 @@ public partial class @Actions : IInputActionCollection2, IDisposable
         // Launch
         m_Launch = asset.FindActionMap("Launch", throwIfNotFound: true);
         m_Launch_Launch = m_Launch.FindAction("Launch", throwIfNotFound: true);
+        // GameTouch
+        m_GameTouch = asset.FindActionMap("GameTouch", throwIfNotFound: true);
+        m_GameTouch_TapMove = m_GameTouch.FindAction("TapMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -272,6 +347,39 @@ public partial class @Actions : IInputActionCollection2, IDisposable
         }
     }
     public LaunchActions @Launch => new LaunchActions(this);
+
+    // GameTouch
+    private readonly InputActionMap m_GameTouch;
+    private IGameTouchActions m_GameTouchActionsCallbackInterface;
+    private readonly InputAction m_GameTouch_TapMove;
+    public struct GameTouchActions
+    {
+        private @Actions m_Wrapper;
+        public GameTouchActions(@Actions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TapMove => m_Wrapper.m_GameTouch_TapMove;
+        public InputActionMap Get() { return m_Wrapper.m_GameTouch; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameTouchActions set) { return set.Get(); }
+        public void SetCallbacks(IGameTouchActions instance)
+        {
+            if (m_Wrapper.m_GameTouchActionsCallbackInterface != null)
+            {
+                @TapMove.started -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnTapMove;
+                @TapMove.performed -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnTapMove;
+                @TapMove.canceled -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnTapMove;
+            }
+            m_Wrapper.m_GameTouchActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @TapMove.started += instance.OnTapMove;
+                @TapMove.performed += instance.OnTapMove;
+                @TapMove.canceled += instance.OnTapMove;
+            }
+        }
+    }
+    public GameTouchActions @GameTouch => new GameTouchActions(this);
     private int m_controlsSchemeIndex = -1;
     public InputControlScheme controlsScheme
     {
@@ -279,6 +387,24 @@ public partial class @Actions : IInputActionCollection2, IDisposable
         {
             if (m_controlsSchemeIndex == -1) m_controlsSchemeIndex = asset.FindControlSchemeIndex("controls");
             return asset.controlSchemes[m_controlsSchemeIndex];
+        }
+    }
+    private int m_TouchscreenSchemeIndex = -1;
+    public InputControlScheme TouchscreenScheme
+    {
+        get
+        {
+            if (m_TouchscreenSchemeIndex == -1) m_TouchscreenSchemeIndex = asset.FindControlSchemeIndex("Touchscreen");
+            return asset.controlSchemes[m_TouchscreenSchemeIndex];
+        }
+    }
+    private int m_GamepadSchemeIndex = -1;
+    public InputControlScheme GamepadScheme
+    {
+        get
+        {
+            if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+            return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
     public interface IControlsActions
@@ -289,5 +415,9 @@ public partial class @Actions : IInputActionCollection2, IDisposable
     public interface ILaunchActions
     {
         void OnLaunch(InputAction.CallbackContext context);
+    }
+    public interface IGameTouchActions
+    {
+        void OnTapMove(InputAction.CallbackContext context);
     }
 }

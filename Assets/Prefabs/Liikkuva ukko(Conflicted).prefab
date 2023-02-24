@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2884510596784977012}
   - component: {fileID: 7534575522294296538}
   - component: {fileID: 233730721186474619}
-  - component: {fileID: 6643356511984648854}
   - component: {fileID: 2884510596784977015}
   - component: {fileID: 2884510596784977014}
   - component: {fileID: 2884510596784977008}
@@ -130,19 +129,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cd8ff27c996a2f46be83849cf95e95c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
---- !u!114 &6643356511984648854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2884510596784977011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e22cac31648df3429332a32ec60a062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &2884510596784977015
@@ -313,10 +299,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 08c6c824-72f2-4c04-9b2d-e5d1a1580e28
     m_ActionName: Launch/Launch[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 975bce87-b055-4207-994c-69820eee3878
-    m_ActionName: GameTouch/TapMove[/Device Simulator Touchscreen/primaryTouch/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: controls
   m_DefaultActionMap: Controls

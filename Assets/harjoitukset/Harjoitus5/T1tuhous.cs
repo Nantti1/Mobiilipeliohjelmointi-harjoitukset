@@ -13,8 +13,6 @@ namespace Harjoitukset
         [SerializeField] private GameObject target;
 
 
-
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
             Destroy(this.gameObject);
