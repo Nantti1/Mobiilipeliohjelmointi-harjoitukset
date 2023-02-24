@@ -39,9 +39,6 @@ namespace Harjoitukset
         private void FixedUpdate()
         {
 
-            
-
-
             bool jump = false;
             if (inputReader.GetJump())
             {

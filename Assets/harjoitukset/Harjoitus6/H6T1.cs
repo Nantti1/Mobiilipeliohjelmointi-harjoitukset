@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,10 @@ namespace Harjoitukset
             VirtualJoystick
         }
 
+        [SerializeField] private float thrust = 20;
+
         private Vector2 moveInput;
+        
 
         private PlayerInput playerInput;
 
@@ -22,6 +26,7 @@ namespace Harjoitukset
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();
+            
         }
         private void Start()
         {
@@ -43,6 +48,7 @@ namespace Harjoitukset
             Debug.Log($"Syöte: {moveInput}");
         }
 
+      
 
         public Vector2 GetMoveInput()
         {
@@ -56,6 +62,7 @@ namespace Harjoitukset
             
 
         }
+
 
 
     }

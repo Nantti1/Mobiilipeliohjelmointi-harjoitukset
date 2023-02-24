@@ -155,6 +155,15 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b086e97-35ee-4f99-a36f-0356e282280a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -166,6 +175,17 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Touchscreen"",
                     ""action"": ""TapMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2e92d94-5c5a-4e74-b212-08e5221d1850"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touchscreen"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -218,6 +238,7 @@ public partial class @Actions : IInputActionCollection2, IDisposable
         // GameTouch
         m_GameTouch = asset.FindActionMap("GameTouch", throwIfNotFound: true);
         m_GameTouch_TapMove = m_GameTouch.FindAction("TapMove", throwIfNotFound: true);
+        m_GameTouch_Jump = m_GameTouch.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -352,11 +373,13 @@ public partial class @Actions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_GameTouch;
     private IGameTouchActions m_GameTouchActionsCallbackInterface;
     private readonly InputAction m_GameTouch_TapMove;
+    private readonly InputAction m_GameTouch_Jump;
     public struct GameTouchActions
     {
         private @Actions m_Wrapper;
         public GameTouchActions(@Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @TapMove => m_Wrapper.m_GameTouch_TapMove;
+        public InputAction @Jump => m_Wrapper.m_GameTouch_Jump;
         public InputActionMap Get() { return m_Wrapper.m_GameTouch; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -369,6 +392,9 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                 @TapMove.started -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnTapMove;
                 @TapMove.performed -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnTapMove;
                 @TapMove.canceled -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnTapMove;
+                @Jump.started -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_GameTouchActionsCallbackInterface.OnJump;
             }
             m_Wrapper.m_GameTouchActionsCallbackInterface = instance;
             if (instance != null)
@@ -376,6 +402,9 @@ public partial class @Actions : IInputActionCollection2, IDisposable
                 @TapMove.started += instance.OnTapMove;
                 @TapMove.performed += instance.OnTapMove;
                 @TapMove.canceled += instance.OnTapMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
@@ -419,5 +448,6 @@ public partial class @Actions : IInputActionCollection2, IDisposable
     public interface IGameTouchActions
     {
         void OnTapMove(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
