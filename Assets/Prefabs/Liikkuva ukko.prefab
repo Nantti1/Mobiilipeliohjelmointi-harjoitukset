@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2884510596784977014}
   - component: {fileID: 2884510596784977008}
   - component: {fileID: 6633595282179625958}
+  - component: {fileID: 1066987769350110160}
   - component: {fileID: -2052268043319392947}
   - component: {fileID: 7536494560662344465}
   - component: {fileID: -2845829201703819715}
@@ -228,6 +229,19 @@ MonoBehaviour:
   speed: 3
   grounded: 0
   thrust: 13
+--- !u!114 &1066987769350110160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884510596784977011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bfc63457e8ccf44817ed2ed05a1917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HowManyCoins: {fileID: 0}
 --- !u!114 &-2052268043319392947
 MonoBehaviour:
   m_ObjectHideFlags: 0
