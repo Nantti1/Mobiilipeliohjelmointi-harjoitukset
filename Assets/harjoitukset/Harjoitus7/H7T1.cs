@@ -37,8 +37,13 @@ namespace Harjoitukset
         public static void AddingScore(int amount)
         {
             playerScore += amount;
+            SaveNumber();
         }
 
+        public static void SaveNumber()
+        {
+            PlayerPrefs.SetInt("myNumber", playerScore);
+        }
 
         public static int RetScore()
         {

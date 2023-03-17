@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 
@@ -22,8 +23,16 @@ namespace Harjoitukset
 
         private void UpdateScoreText()
         {
-            HowManyCoins.SetText("Score: " + H7T1.RetScore()); // update the score text with the current score
+            HowManyCoins.SetText("Score: " + LoadNumber()); // update the score text with the current score
+            //HowManyCoins.SetText("Score: " + H7T1.RetScore());
         }
+
+        public int LoadNumber()
+        {
+            int loadedNumber = PlayerPrefs.GetInt("myNumber");
+            return loadedNumber;
+        }
+
     }
 }
 
