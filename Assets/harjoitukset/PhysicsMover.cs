@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 namespace Harjoitukset
@@ -7,7 +8,9 @@ namespace Harjoitukset
     public class PhysicsMover : MonoBehaviour
     {
         [SerializeField]
-        private float speed = 1;
+        private static float speed = 3;
+
+        private static float oldSpeed;
 
         private Rigidbody2D rb2D;
         private InputReader inputReader;
@@ -59,19 +62,40 @@ namespace Harjoitukset
             
             
         }
-
-
-
-
+        public static void SpeedUp()
+        {
+            oldSpeed = speed;
+            speed = speed * 1.5f;
+        }
         
+        public static void Slowdown()
+        {
+            speed = oldSpeed;
+        }
+
+        public void SpeedingUp()
+        {
+
+            StartCoroutine(PowerUp());
+            StopCoroutine(PowerUp());
+
+        }
+        IEnumerator PowerUp()
+        {
+            SpeedUp();
+
+            yield return new WaitForSeconds(5f);
+
+            Slowdown();
+        }
 
         //public void Move(Vector2 direction)
         //{
         //    this.direction = direction;
         //}
 
-        
-        
+
+
 
     }
 }
